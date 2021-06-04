@@ -1,0 +1,61 @@
+.deal {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparentize(#2B2B44, 0.9);
+  box-shadow: 1px 1px 3px 0px #DDDDDD;
+  margin-bottom: 21px;
+  border-radius: 12px;
+}
+
+$title-row-padding: 24px;
+
+.title-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: $title-row-padding 14px;
+  border-bottom: 1px solid transparentize(#000000, 0.92);;
+}
+
+.logo-wrapper {
+  flex: 1;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.names {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.supplier-name {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.deal-name {
+  color: transparentize(#2B2B44, 0.6);
+}
+
+.features {
+  flex: 1;
+  text-align: right;
+}
+
+.feature {
+  font-size: 12px;
+  color: transparentize(#2B2B44, 0.6);
+}
+
+.details-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: $title-row-padding 28px;
+}

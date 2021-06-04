@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+
+  mongodb:
+    image: mongo:4
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./database-init:/docker-entrypoint-initdb.d
+    environment:
+      - MONGO_INITDB_DATABASE=interview
+    networks:
+      - main
+
+  backend:
+    ports:
+      - 4000:4000
+    build:
+      context: .
+      dockerfile: ./packages/backend/Dockerfile
+    volumes:
+      - ./packages/backend/src:/app/packages/backend/src
+      - ./packages/backend/dist:/app/packages/backend/dist
+    depends_on:
+      - mongodb
+    networks:
+      - main
+
+  frontend:
+    ports:
+      - 4200:4200
+    build:
+      context: .
+      dockerfile: ./packages/frontend/Dockerfile
+    volumes:
+      - ./packages/frontend/src:/app/packages/frontend/src
+      - ./packages/frontend/dist:/app/packages/frontend/dist
+    depends_on:
+      - backend
+    networks:
+      - main
+
+networks:
+  main:
+    name: main

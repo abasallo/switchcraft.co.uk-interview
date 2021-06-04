@@ -1,0 +1,26 @@
+<div class="deal" *ngIf="deal" data-e2e="deal">
+  <div class="title-row">
+
+    <div class="logo-wrapper">
+      <div class="logo" [style.background-image]="getLogoImage(deal)"></div>
+    </div>
+
+    <div class="names">
+      <div class="supplier-name">{{ deal.supplierName }}</div>
+      <div class="deal-name">{{ deal.dealName }}</div>
+    </div>
+
+    <div class="features">
+      <div *ngIf="deal.durationMonths" class="feature">
+        Fixed duration
+      </div>
+    </div>
+
+  </div>
+
+  <div class="details-row">
+    <div class="cost" data-e2e="cost">£{{ deal.yearlyCost }} a year</div>
+    <div *ngIf="deal.durationMonths" class="duration">{{ deal.durationMonths }} months</div>
+  </div>
+
+</div>

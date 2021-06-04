@@ -1,0 +1,23 @@
+{
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "declaration": false,
+    "strict": true,
+    "lib": [
+      "esnext", "esnext.asynciterable"
+    ],
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": [
+      "jest",
+      "node"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+
+version: "3.8"
+services:
+
+  frontend:
+    command: --configuration=e2e
+
+  e2e:
+    build:
+      context: .
+      dockerfile: ./cypress/Dockerfile
+    environment:
+      - CYPRESS_baseUrl=http://frontend:4200
+    volumes:
+      - ./cypress:/cypress
+      - ./cypress.json:/cypress.json
+    networks:
+      - main
+
+networks:
+  main:
+    external:
+      name: main
