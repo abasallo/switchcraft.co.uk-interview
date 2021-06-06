@@ -30,4 +30,15 @@ context("Deals", () => {
     cy.get("[data-e2e='deal'] [data-e2e='cost']")
       .contains(/£\d* a year/);
   });
+
+  it("the deals are shown ordered, cheaper first", () => {
+    const renderedYearlyCosts = [];
+    cy.get("[data-e2e='deal'] [data-e2e='cost']")
+      .each(($li) => {
+        renderedYearlyCosts.push($li.text());
+      })
+      .wrap(renderedYearlyCosts)
+      .should("deep.equal",
+        ["£360 a year", "£450 a year", "£500 a year", "£600 a year"]);
+  });
 });
