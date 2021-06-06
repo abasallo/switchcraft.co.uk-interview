@@ -96,7 +96,7 @@ describe("SingleDealComponent", () => {
 
     test("should show the expected number of features", () => {
       const compiled = fixture.debugElement.nativeElement;
-      const expectedFeatureLength = 1;
+      const expectedFeatureLength = 2;
       expect(compiled.querySelectorAll(".feature").length)
         .toBe(expectedFeatureLength);
     });

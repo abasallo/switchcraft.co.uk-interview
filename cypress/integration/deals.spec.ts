@@ -14,6 +14,18 @@ context("Deals", () => {
       .should("have.length", expectedNumberOfDeals);
   });
 
+  it("displays expected number of fixed duration deals", () => {
+    const expectedNumberOfFixedDurationDeals = 1;
+    cy.get("[data-e2e='feature-fixed-duration']")
+      .should("have.length", expectedNumberOfFixedDurationDeals);
+  });
+
+  it("displays expected number of green energy deals", () => {
+    const expectedNumberOfGreenEnergyDeals = 2;
+    cy.get("[data-e2e='feature-green-energy']")
+      .should("have.length", expectedNumberOfGreenEnergyDeals);
+  });
+
   it("the deals have a price per year", () => {
     cy.get("[data-e2e='deal'] [data-e2e='cost']")
       .contains(/£\d* a year/);

@@ -11,8 +11,11 @@
     </div>
 
     <div class="features">
-      <div *ngIf="deal.durationMonths" class="feature">
+      <div *ngIf="deal.durationMonths" class="feature" data-e2e="feature-fixed-duration">
         Fixed duration
+      </div>
+      <div *ngIf="deal.isGreenEnergy" class="feature" data-e2e="feature-green-energy">
+        Green energy
       </div>
     </div>
 
