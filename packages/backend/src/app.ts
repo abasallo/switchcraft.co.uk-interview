@@ -1,7 +1,7 @@
 import express from "express";
 import { appLogger } from "./app-logger";
 import { handleApiErrors } from "./handle-error";
-import { getBigGreenEnergyDeals } from "./big-green-energy-deals/get-big-green-energy-deals";
+import { getBigGreenEnergyDeals } from "./deals/big-green-energy-deals/get-big-green-energy-deals";
 import type { FrontendDealsResponse } from "@switchcraft-interview/shared-models";
 import cors from "cors";
 

@@ -1,6 +1,6 @@
 import type { BigGreenEnergyDeal } from "@switchcraft-interview/shared-models";
 import { Collection } from "mongodb";
-import { getDatabase } from "../database/get-database";
+import { getDatabase } from "../../database/get-database";
 
 export const getDbBigGreenEnergyCollection
   = async (): Promise<Collection<BigGreenEnergyDeal>> => {
