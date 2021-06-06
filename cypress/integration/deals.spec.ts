@@ -9,19 +9,19 @@ context("Deals", () => {
   });
 
   it("displays the expected number of deals", () => {
-    const expectedNumberOfDeals = 2;
+    const expectedNumberOfDeals = 4;
     cy.get("[data-e2e='deal']")
       .should("have.length", expectedNumberOfDeals);
   });
 
   it("displays expected number of fixed duration deals", () => {
-    const expectedNumberOfFixedDurationDeals = 1;
+    const expectedNumberOfFixedDurationDeals = 2;
     cy.get("[data-e2e='feature-fixed-duration']")
       .should("have.length", expectedNumberOfFixedDurationDeals);
   });
 
   it("displays expected number of green energy deals", () => {
-    const expectedNumberOfGreenEnergyDeals = 2;
+    const expectedNumberOfGreenEnergyDeals = 3;
     cy.get("[data-e2e='feature-green-energy']")
       .should("have.length", expectedNumberOfGreenEnergyDeals);
   });

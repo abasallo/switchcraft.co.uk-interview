@@ -4,6 +4,14 @@ exports[`deals endpoint returns the expected result 1`] = `
 Object {
   "deals": Array [
     Object {
+      "dealName": "Shiny 5000",
+      "durationMonths": 18,
+      "isGreenEnergy": true,
+      "logo": "<svg></svg>",
+      "supplierName": "Shiny Yellow Energy",
+      "yearlyCost": 360,
+    },
+    Object {
       "dealName": "Fixed Green Deal",
       "durationMonths": 12,
       "isGreenEnergy": true,
@@ -17,6 +25,13 @@ Object {
       "logo": "<svg></svg>",
       "supplierName": "Big Green Energy",
       "yearlyCost": 500,
+    },
+    Object {
+      "dealName": "Shiny Forever",
+      "isGreenEnergy": false,
+      "logo": "<svg></svg>",
+      "supplierName": "Shiny Yellow Energy",
+      "yearlyCost": 600,
     },
   ],
 }

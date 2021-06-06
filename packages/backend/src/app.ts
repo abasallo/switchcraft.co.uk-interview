@@ -4,6 +4,8 @@ import { handleApiErrors } from "./handle-error";
 import { getBigGreenEnergyDeals } from "./deals/big-green-energy-deals/get-big-green-energy-deals";
 import type { FrontendDealsResponse } from "@switchcraft-interview/shared-models";
 import cors from "cors";
+import { getShinyYellowEnergyDeals } from "./deals/shiny-yellow-energy-deals/get-shiny-yellow-energy-deals";
+import { dealsByYearlyCost } from "./utils/sort";
 
 const app = express();
 app.use(cors());
@@ -20,10 +22,11 @@ app.use((req, res, next) => {
 });
 
 app.get<undefined, FrontendDealsResponse>("/deals", async (req, res) => {
-  const deals = await getBigGreenEnergyDeals();
-  return res.json({
-    deals
-  });
+  const bigGreenEnergyDeals = await getBigGreenEnergyDeals();
+  const shinyYellowEnergyDeals = await getShinyYellowEnergyDeals();
+  const deals = dealsByYearlyCost(bigGreenEnergyDeals
+    .concat(shinyYellowEnergyDeals));
+  return res.json({ deals });
 });
 
 app.use(handleApiErrors);
