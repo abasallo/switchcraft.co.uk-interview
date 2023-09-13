@@ -9,7 +9,7 @@ import { environment } from "../../environments/environment";
   selector: "app-all-deals",
   templateUrl: "./all-deals.component.html",
   styleUrls: ["./all-deals.component.scss"]
-})
+  })
 export class AllDealsComponent implements OnInit {
 
   public deals$: Observable<FrontendDeal[]> | undefined;

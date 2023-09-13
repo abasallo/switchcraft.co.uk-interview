@@ -8,16 +8,16 @@ import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SingleDealComponent,
-    AllDealsComponent
+  AppComponent,
+  SingleDealComponent,
+  AllDealsComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+  BrowserModule,
+  AppRoutingModule,
+  HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
-})
+  })
 export class AppModule { }

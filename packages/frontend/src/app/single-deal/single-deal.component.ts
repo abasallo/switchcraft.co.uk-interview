@@ -5,7 +5,7 @@ import { FrontendDeal } from "@switchcraft-interview/shared-models";
   selector: "app-single-deal",
   templateUrl: "./single-deal.component.html",
   styleUrls: ["./single-deal.component.scss"]
-})
+  })
 export class SingleDealComponent {
 
   @Input() deal: FrontendDeal | undefined;
